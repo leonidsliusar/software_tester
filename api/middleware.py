@@ -68,7 +68,7 @@ def _get_user_token_from_headers(
 ) -> Optional[str]:
     """Extracts token from request"""
     try:
-        return request.META["HTTP_X_LAMB_AUTH_TOKEN"]
+        return request.META["headers"]["HTTP_X_LAMB_AUTH_TOKEN"]
     except (AttributeError, KeyError):
         return None
 

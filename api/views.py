@@ -23,7 +23,7 @@ __all__ = [
     "HandbooksListView",
     "HandbookView",
     # auth
-    "AuthRegisterView",
+    "AuthView",
     # user
     "UserView",
     "StoreExchangeRatesView",
@@ -85,7 +85,7 @@ def _get_auth_engine(parsed_body: dict) -> Optional[Type[AbstractAuthEngine]]:
 
 
 @rest_allowed_http_methods(["POST"])
-class AuthRegisterView(RestView):
+class AuthView(RestView):
     def post(self, request: AppRequest):
         """User authentication/registration view"""
         # extract and check params
